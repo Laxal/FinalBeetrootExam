@@ -2,21 +2,25 @@
   <div class="header-title-group">
     <h2>RESTAURANT</h2>
     <h1>HUNGRY PEOPLE</h1>
+    <header-button />
   </div>
 </template>
 
 <script>
-export default {};
+import HeaderButton from "./HeaderButton.vue";
+
+export default {
+  components: { HeaderButton },
+};
 </script>
 
 <style lang="scss" scoped>
 .header-title-group {
-  padding: 0 100px;
+  padding: 0;
   position: absolute;
-  top: 0;
-  right: 0;
-  bottom: 0;
-  left: 0;
+  top: 65%;
+  left: 50%;
+  transform: translate(-50%, -50%);
   z-index: 0;
 }
 
@@ -42,6 +46,8 @@ h1 {
   color: #fff;
   text-align: center;
   padding-bottom: 30px;
+  margin-bottom: 30px;
+  white-space: nowrap;
 
   &::before {
     content: "";

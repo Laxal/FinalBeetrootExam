@@ -13,16 +13,18 @@
         <header-social />
       </div>
     </div>
+    <header-scroll />
   </header>
 </template>
 
 <script>
 import HeaderMain from "./HeaderMain.vue";
 import HeaderNav from "./HeaderNav.vue";
+import HeaderScroll from "./HeaderScroll.vue";
 import HeaderSocial from "./HeaderSocial.vue";
 
 export default {
-  components: { HeaderNav, HeaderSocial, HeaderMain },
+  components: { HeaderNav, HeaderSocial, HeaderMain, HeaderScroll },
 };
 </script>
 
