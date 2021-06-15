@@ -1,7 +1,7 @@
 <template>
   <section class="section5">
     <h3 class="section5__main-title">SPECIALTIES</h3>
-    <vue-slick-carousel v-bind="settings">
+    <div ref="slick">
       <div>
         <div class="container section5-container">
           <div class="section5__description">
@@ -65,32 +65,20 @@
           </div>
         </div>
       </div>
-    </vue-slick-carousel>
+    </div>
   </section>
 </template>
 
 <script>
-import VueSlickCarousel from "vue-slick-carousel";
-import "vue-slick-carousel/dist/vue-slick-carousel-theme.css";
-
 export default {
-  components: {
-    VueSlickCarousel,
-  },
-
-  data() {
-    return {
-      settings: {
-        arrows: false,
-        dots: true,
-        dotsClass: "slick-dots custom-dot-class",
-        edgeFriction: 0.35,
-        infinite: false,
-        speed: 500,
-        slidesToShow: 1,
-        slidesToScroll: 1,
-      },
-    };
+  mounted() {
+    window.$(this.$refs.slick).slick({
+      dots: true,
+      // infinite: true,
+      // autoplay: true,
+      autoplaySpeed: 4000,
+      dotsClass: "slick-dots",
+    });
   },
 };
 </script>
@@ -98,7 +86,7 @@ export default {
 <style lang="scss" scoped>
 .section5 {
   position: relative;
-  background: url("../assets/img/section3-bg.jpg");
+  background: url("../assets/img/section5-bg.jpg") center / cover no-repeat;
   padding: 100px 0;
 
   &__main-title {
@@ -205,5 +193,10 @@ export default {
       border-radius: 5px;
     }
   }
+}
+.custom-dots {
+  background-color: #00f;
+  widows: 200px;
+  height: 100px;
 }
 </style>
